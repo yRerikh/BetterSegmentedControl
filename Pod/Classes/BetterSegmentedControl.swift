@@ -492,6 +492,24 @@ import UIKit
     }
 }
 
+extension BetterSegmentedControl {
+    @objc public var objcIndex: Int { index }
+    
+    @objc public func objcPrepareSegments() {
+        segments = LabelSegment.segments(
+            withTitles: [
+                NSLocalizedString("Normal", comment: ""),
+                NSLocalizedString("Quick_scan", comment: ""),
+            ],
+            normalFont: .init(name: "GothamPro-Bold", size: 16),
+            selectedFont: .init(name: "GothamPro-Bold", size: 16))
+    }
+    
+    @objc public func objcSetIndex(_ index: Int, animated: Bool) {
+        setIndex(index, animated: animated, shouldSendValueChangedEvent: false)
+    }
+}
+
 // MARK: - UIGestureRecognizerDelegate
 extension BetterSegmentedControl: UIGestureRecognizerDelegate {
     override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
