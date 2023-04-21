@@ -1,10 +1,10 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "BetterSegmentedControl",
     platforms: [
-        .iOS(.v9),
+        .iOS(.v11),
     ],
     products: [
         .library(
